@@ -1,0 +1,284 @@
+/* ==================== ESTILOS PARA INDEX.HTML ==================== */
+/* Sección de Concientización */
+.concientizacion {
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.concientizacion .concientizacion-contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.concientizacion h1 {
+  font-size: 2.5rem;
+  color: #5C4033;
+  margin-bottom: 1rem;
+}
+
+.concientizacion p {
+  font-size: 1.1rem;
+  color: #5C4033;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.testimonios {
+  background-color: #fff8f3;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonios h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #D9777B;
+}
+
+.testimonios-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonio {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 320px;
+  font-style: italic;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonio:hover {
+  transform: translateY(-5px);
+}
+
+.testimonio span {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ==================== CARRUSEL CENTRADO ==================== */
+.carrusel {
+  padding: 3rem 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carrusel-contenedor {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 36);
+  gap: 15px;
+  padding: 15px 0;
+  align-items: center;
+  animation: scroll 40s linear infinite;
+}
+
+/* Contenedor unificado para imágenes */
+.slide {
+  width: 250px;
+  height: 250px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo unificado para imágenes */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Efecto hover */
+.slide:hover img {
+  transform: scale(1.05);
+}
+
+/* Animación infinita */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 16));
+    /* Mitad del total de slides */
+  }
+}
+
+/* ==================== LIGHTBOX MEJORADO ==================== */
+/* Estilos para el Lightbox */
+.lightbox {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3eeed;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  margin: 5% auto;
+  display: block;
+}
+
+.lightbox-caption {
+  color: #5C4033;
+  padding: 10px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Botones */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  background: #5C4033;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  background: #F4B6A9;
+  transform: scale(1.1);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+
+.lightbox-nav button {
+  pointer-events: auto;
+  z-index: 1002;
+}
+
+.lightbox-content {
+  transition: opacity 0.3s ease;
+}
+
+.prev-btn,
+.next-btn {
+  pointer-events: auto;
+  background: #5C4033;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: #F4B6A9;
+  transform: scale(1.1);
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+  .slide {
+    width: 200px;
+    height: 200px;
+  }
+
+  .slide-track {
+    width: calc(200px * 18);
+    animation: scroll-mobile 40s linear infinite;
+  }
+
+  @keyframes scroll-mobile {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-200px * 9));
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    width: 160px;
+    height: 160px;
+  }
+
+  .slide-track {
+    width: calc(160px * 18);
+    animation: scroll-mobile-small 40s linear infinite;
+  }
+
+  @keyframes scroll-mobile-small {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-160px * 9));
+    }
+  }
+}

@@ -1,0 +1,55 @@
+/* -------------------- dudas.html -------------------- */
+.acordeon-preguntas {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    margin: 0.5rem auto 1rem auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.acordeon-preguntas h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #5C4033;
+}
+
+.pregunta {
+    background-color: #fbdfd9;
+    padding: 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #F4B6A9;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    color: #5C4033;
+}
+
+.pregunta:hover {
+    background-color: #FFEFEF;
+}
+
+.respuesta {
+    display: none;
+    padding: 10px 15px;
+    background-color: #FCE9E1;
+    border-left: 3px solid #F4B6A9;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: left;
+}
+
+.flecha {
+    transition: transform 0.3s;
+}
+
+.abierta .respuesta {
+    display: block;
+}
+
+.abierta .flecha {
+    transform: rotate(90deg);
+}
